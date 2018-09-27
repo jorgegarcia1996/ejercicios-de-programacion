@@ -21,7 +21,7 @@ public class Ejercicio12 {
     double notaContablePrimerExamen = notaPrimerExamen * 0.4;
     double notaContableSegundoExamen = notaFinal - notaContablePrimerExamen;
     double notaSegundoExamen = notaContableSegundoExamen / 0.6;
-    System.out.printf("Para sacar un %.0f en el trimestre", notaFinal);
+    System.out.printf("Para sacar un %.2f en el trimestre", notaFinal);
     System.out.printf("debes sacar un %.2f en el segundo examen", notaSegundoExamen);
   }
 }
