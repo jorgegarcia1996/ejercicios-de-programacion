@@ -13,6 +13,7 @@ public class Ejercicio01 {
     System.out.print(" Por favor, introduzca el dia de la semana que desea");
     System.out.print(" consultar (L-V):");
     String dia = System.console().readLine();
+    dia = dia.toUpperCase();
     
     //Comprobar el día de la semana
     if (dia.equals("L")) {
