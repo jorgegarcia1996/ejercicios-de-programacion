@@ -11,16 +11,14 @@ public class Ejercicio07 {
     //Pedir las notas
     System.out.println("Calcular la media de 3 notas.");
     System.out.print("Introduzca la primera nota: ");
-    double altura = Double.parseDouble(System.console().readLine());
+    double nota1 = Double.parseDouble(System.console().readLine());
+    System.out.print("Introduzca la segunda nota: ");
+    double nota2 = Double.parseDouble(System.console().readLine());
+    System.out.print("Introduzca la tercera nota: ");
+    double nota3 = Double.parseDouble(System.console().readLine());
     
-    //Resolver la ecuación y mostrar el resultado
-    if ( altura <= 0) {
-      System.out.print("La altura debe ser un número mayor que '0'.");
-    } else {
-      double g = 9.81;
-      double tiempo = Math.sqrt((2 * altura) / g);
-      System.out.printf("Al tirar el objeto desde %.2f metros tarda", altura);
-      System.out.printf(" %.2f segundos en llegar al sualo", tiempo);
-    }
+    //Calcular la media de las 3 notas
+    double notaMedia = (nota1 + nota2 + nota3) / 3;
+    System.out.printf("Su nota media es %.2f.", notaMedia);
   }
 }
