@@ -16,7 +16,7 @@ public class Ejercicio14 {
     
     // Comprobar si el númer es par
     int par = numero % 2;
-    if (par > 0) {
+    if (par != 0) {
       System.out.println("El número " + numero + " es impar." );
     } else {
       System.out.println("El número " + numero + " es par.");
@@ -24,7 +24,7 @@ public class Ejercicio14 {
     
     //Comprobar si el número es divisible enntre 5
     int divisible5 = numero % 5;
-    if (divisible5 > 0) {
+    if (divisible5 != 0) {
       System.out.println("El número " + numero + " no es divisible entre 5." );
     } else {
       System.out.println("El número " + numero + " es divisible entre 5.");
