@@ -15,6 +15,7 @@ public class Ejercicio17 {
     int numero = Integer.parseInt(System.console().readLine());
     
     //Seperar la última cifra del número
-    
+    int ultimaCifra = numero % 10;
+    System.out.print("La última cifra del número " + numero + " es: " + ultimaCifra);
   }
 }
