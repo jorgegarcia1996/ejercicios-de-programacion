@@ -32,9 +32,5 @@ public class Ejercicio18 {
     } else {
       System.out.print("El número " + numero + " solo tiene una cifra, la primera.");
     }
-    
-    
-    //Otra forma de sacar la primera cifra del número
-    //System.out.print("La última cifra del número " + numero + " es: " + numero.charAt(0));
   }
 }
