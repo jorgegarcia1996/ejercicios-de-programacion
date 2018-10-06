@@ -30,20 +30,72 @@ public class Ejercicio24 {
     
     //Realizar las nóminas
     //─ ━ │ ┃ ┄ ┅ ┆ ┇ ┈ ┉ ┊ ┋ ┌ ┏ ┐ ┓ └ ┗ ┘ ┛ ├ ┣ ┤ ┫ ┬ ┳ ┴ ┻ ┼ ╋ ═ ║ ╔ ╗ ╚ ╝ ╠ ╣ ╦ ╩ ╬ ╭ ╮ ╯ ╰
-    System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
-    double sueldoBase = 0, dietas = diasVisita * 30;
+    double sueldoBase = 0, dietas = diasVisita * 30, sueldoBruto = 0, irpf = 0;
+    double sueldoNeto = 0;
+    String porIrpf = "";
     switch (cargo) {
       case 1:
         sueldoBase = 950;
+        sueldoBruto = sueldoBase + dietas;
+        if (estadoCivil == 1) {
+          porIrpf = "25%";
+          irpf = sueldoBruto * 0.25;
+        } else {
+          porIrpf = "20%";
+          irpf = sueldoBruto * 0.2;
+        }
+        sueldoNeto = sueldoBruto - irpf;
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
         System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo base", sueldoBase);
         System.out.printf("┃ %-22s %10.2f ┃\n", "Dietas (" + diasVisita + " viajes)", dietas);
-        System.out.println("");
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo bruto", sueldoBruto);
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Retención IRPF (" + porIrpf + ")", irpf);
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo neto", sueldoNeto);
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         break;
       case 2:
-        
+        sueldoBase = 1200;
+        sueldoBruto = sueldoBase + dietas;
+        if (estadoCivil == 1) {
+          porIrpf = "25%";
+          irpf = sueldoBruto * 0.25;
+        } else {
+          porIrpf = "20%";
+          irpf = sueldoBruto * 0.2;
+        }
+        sueldoNeto = sueldoBruto - irpf;
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo base", sueldoBase);
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Dietas (" + diasVisita + " viajes)", dietas);
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo bruto", sueldoBruto);
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Retención IRPF (" + porIrpf + ")", irpf);
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo neto", sueldoNeto);
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         break;
       case 3:
-        
+        sueldoBase = 1600;
+        sueldoBruto = sueldoBase + dietas;
+        if (estadoCivil == 1) {
+          porIrpf = "25%";
+          irpf = sueldoBruto * 0.25;
+        } else {
+          porIrpf = "20%";
+          irpf = sueldoBruto * 0.2;
+        }
+        sueldoNeto = sueldoBruto - irpf;
+        System.out.println("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo base", sueldoBase);
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Dietas (" + diasVisita + " viajes)", dietas);
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo bruto", sueldoBruto);
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Retención IRPF (" + porIrpf + ")", irpf);
+        System.out.println("┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫");
+        System.out.printf("┃ %-22s %10.2f ┃\n", "Sueldo neto", sueldoNeto);
+        System.out.println("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
         break;
       default:
       
