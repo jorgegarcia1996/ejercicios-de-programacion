@@ -28,6 +28,6 @@ public class Ejercicio09 {
     } else {
       cifras = 1;
     }
-    System.out.println("El número " + numero + " tiene " + cifras + " cifras.");
+    System.out.println("El número tiene " + cifras + " cifras.");
   }
 }
