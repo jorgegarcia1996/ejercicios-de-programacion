@@ -11,12 +11,15 @@
 * @author Jorge García Molina
 */
 
+import java.util.Scanner;
+
 public class Ejercicio09 {
   public static void main(String[] args) {
     System.out.println("Contador de cifras.");
     //Pedir el número
     System.out.print("Introduzca un número para contar el número de cifras que tiene: ");
-    long numero = Long.parseLong(System.console().readLine());
+    Scanner s = new Scanner(System.in);
+    int numero = Integer.parseInt(s.nextLine());
     
     //Contar las cifras del número
     int cifras = 0;
