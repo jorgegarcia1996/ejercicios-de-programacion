@@ -1,7 +1,7 @@
 /**
-* Ejercicio 19 del Tema 5
+* Ejercicio 20 del Tema 5
 * 
-* Realiza un programa que pinte una pirámide por pantalla. La altura se debe
+* Realiza un programa que pinte una pirámide hueca por pantalla. La altura se debe
 * pedir por teclado. El carácter con el que se pinta la pirámide también se debe
 * pedir por teclado.
 * 
@@ -9,7 +9,7 @@
 */
 import java.util.Scanner;
 
-public class Ejercicio19 { 
+public class Ejercicio20 { 
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
     System.out.println("Pirámide personalizada.");
@@ -29,8 +29,19 @@ public class Ejercicio19 {
         System.out.print(" ");
         }
         
-        for (int j = 1; j <= i; j++) {
-        System.out.print(sim);
+        if (i != base) {
+          System.out.print(sim);
+          for (int j = 1; j < (i - 1); j++) {
+            System.out.print(" ");
+          }
+          
+          if (i != 1) {
+            System.out.print(sim);
+          }
+        } else {
+          for (int j = 1; j <= i; j++) {
+          System.out.print(sim);
+          }
         }
         System.out.println();
         i += 2;
