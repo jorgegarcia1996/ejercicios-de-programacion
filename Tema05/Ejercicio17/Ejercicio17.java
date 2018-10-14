@@ -1,5 +1,5 @@
 /**
-* Ejercicio 16 del Tema 5
+* Ejercicio 17 del Tema 5
 * 
 * Realiza un programa que sume los 100 números siguientes a un número entero
 * y positivo introducido por teclado. Se debe comprobar que el dato introducido
