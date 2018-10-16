@@ -22,7 +22,7 @@ public class Ejercicio16 {
     //Comprobar si es primo
     boolean primo = true;
     for (int i = 2; i < numero; i++){
-      if ((numero % i) != 0) {
+      if ((numero % i) == 0) {
         primo = false;
       }
     }
