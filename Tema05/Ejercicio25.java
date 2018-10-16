@@ -13,24 +13,18 @@ import java.util.Scanner;
 public class Ejercicio25 {
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
-    System.out.println("Pirámide de números.");
+    System.out.println("Número del revés");
     // Pedir un número al usuario
     System.out.print("Introduzca un número entero: ");
     int numero = Integer.parseInt(s.nextLine());
     
-    //Crear y mostrar la pirámide
-    for (int i = 1; i <= numero; i++) {
-      int espacios = numero - i;
-      for (int j = 1; j <= espacios; j++) {
-        System.out.print(" ");
-      }
-      for (int j = 1; j <= i; j++) {
-        System.out.print(j);
-      }
-      for (int j = i - 1; j > 0; j--) {
-        System.out.print(j);
-      }
-      System.out.println();
+    //Dar la vuelta al número y mostrar el resultado
+    int numero2 = numero;
+    int numeroReves = 0;
+    while (numero2 > 0) {
+      numeroReves = (numeroReves * 10) + (numero2 % 10);
+      numero2 /= 10;
     }
+    System.out.println("El número " + numero + " al revés es: " + numeroReves);
   }
 }
