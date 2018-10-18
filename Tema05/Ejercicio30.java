@@ -32,7 +32,7 @@ public class Ejercicio30 {
 
     //Calcular la horas que hay de la primera a la segunda
     int horasRestantes = 0;
-    if ((hora1 < 24 || hora2 < 24) || (hora1 >= 0 || hora2 >= 0)) {//Comprobar que las horas son correctas
+    if ((hora1 < 24 && hora2 < 24)) {//Comprobar que las horas son correctas
       if (dia1 == dia2) {//Caso de que se de el mismo día en ambas partes
         if (hora1 < hora2) {
           horasRestantes = hora2 - hora1;
