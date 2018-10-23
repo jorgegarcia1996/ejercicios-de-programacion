@@ -24,7 +24,7 @@ public class Ejercicio40 {
       System.out.println("Para la altura debe introducir un número impar mayor que 3.");
     } else {
       int espacios = 0;
-      int espExt = altura - 2;
+      int espExt = altura / 2;
       for (int i = 0; i <= espExt ; i++) {
         System.out.print(" ");
       }
