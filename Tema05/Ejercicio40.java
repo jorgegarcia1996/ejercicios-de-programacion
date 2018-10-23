@@ -25,18 +25,6 @@ public class Ejercicio40 {
     } else {
       int espacios = 0;
       int espExt = altura - 2;
-      /*while (espacios > 0) {
-        for (int i = 0; i <= espExt ; i++) {
-          System.out.print(" ");
-        }
-        System.out.print("*");
-        for ( int j = 0; j < espacios; j++) {
-          System.out.print(" ");
-        }
-        System.out.println("*");
-        espacios -= 2;
-        espExt++;
-      }*/
       for (int i = 0; i <= espExt ; i++) {
         System.out.print(" ");
       }
