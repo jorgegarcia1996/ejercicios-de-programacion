@@ -1,15 +1,16 @@
 package tema06;
 /**
- * Ejercicio 07 del Tema 06
+ * Ejercicio 08 del Tema 06
  * 
- * Escribe un programa que muestre tres apuestas de la quiniela en tres colum-
-nas para los 14 partidos y el pleno al quince (15 filas).
+ * Modifica el programa anterior para que la probabilidad de que salga un 1 sea
+ * de 1/2, la probabilidad de que salga x sea de 1/3 y la probabilidad de que
+ * salga 2 sea de 1/6. Pista: 1/2 = 3/6 y 1/3 = 2/6.
  * 
  * @author jorge
  */
-public class Ejercico07 {
+public class Ejercicio08 {
   public static void main(String[] args) {
-    System.out.println("Adivina el número.");
+    System.out.println("Quiniela 2.");
     
     //Hacar la quiniela
     int resultadoPartido = 0;
@@ -20,16 +21,19 @@ public class Ejercico07 {
         columnas = 1;
       }
       for (int apuesta = 1; apuesta <= columnas; apuesta++) {
-        resultadoPartido = (int)(Math.random() * 3) + 1;
+        resultadoPartido = (int)(Math.random() * 6) + 1;
         switch(resultadoPartido) {
           case 1:
+          case 4:
+          case 5:
             System.out.print("1  |");
             break;
           case 2:
-            System.out.print("  2|");
+          case 6:
+            System.out.print(" X |");
             break;
           case 3:
-            System.out.print(" X |");
+            System.out.print("  2|");
           default:
         }
       }
