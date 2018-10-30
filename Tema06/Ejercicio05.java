@@ -1,5 +1,4 @@
 package tema06;
-import java.util.Scanner;
 /**
  * Ejercicio 05 del Tema 06
  * 
@@ -11,7 +10,6 @@ import java.util.Scanner;
  */
 public class Ejercicio05 {
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
     System.out.println("50 números aleatorios entre 100 y 199, el mayor, "
             + "el menor y la media.");
     

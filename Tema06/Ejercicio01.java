@@ -1,5 +1,4 @@
 package tema06;
-import java.util.Scanner;
 /**
  * Ejercicio 01 del Tema 06
  * 
@@ -10,7 +9,6 @@ import java.util.Scanner;
  */
 public class Ejercicio01 {
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
     System.out.println("Tirada de dados.");
     
     //Tirada de 3 dados

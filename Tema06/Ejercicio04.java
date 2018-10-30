@@ -1,5 +1,4 @@
 package tema06;
-import java.util.Scanner;
 /**
  * Ejercicio 04 del Tema 06
  * 
@@ -10,7 +9,6 @@ import java.util.Scanner;
  */
 public class Ejercicio04 {
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
     System.out.println("20 numeros aleatorios entre 0 y 10.");
     
     //Generar 20 números

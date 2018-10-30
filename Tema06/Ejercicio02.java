@@ -1,5 +1,4 @@
 package tema06;
-import java.util.Scanner;
 /**
  * Ejercicio 02 del Tema 06
  * 
@@ -13,7 +12,6 @@ import java.util.Scanner;
  */
 public class Ejercicio02 {
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
     System.out.println("Carta aleatoria.");
     
     //Generar carta aleatoria
