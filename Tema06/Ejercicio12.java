@@ -15,7 +15,7 @@ public class Ejercicio12 {
     //Generar los caracteres y mostrarlos por pantalla
     int linea = 0;
     for(int i = 0; i < 8000; i++) {
-      System.out.print((char)(Math.random() * (95) + 32));
+      System.out.print((char)((Math.random() * 95) + 32));
       linea++;
       if (linea == 100) {
         linea = 0;
