@@ -1,5 +1,4 @@
 package tema06;
-import java.util.Scanner;
 
 /**
  * Ejercicio 16 del Tema 06
@@ -17,10 +16,10 @@ import java.util.Scanner;
 public class Ejercicio16 {
 
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
     System.out.println("Máquina tragaperras");
 
     //Generar las figuras
+    String figura1 = "", figura2 = "", figura3 = "";
     for (int i = 0; i < 3; i++) {
      String figura = "";
       switch ((int)(Math.random() * 5)) {
@@ -43,8 +42,26 @@ public class Ejercicio16 {
       }
       
       System.out.print(figura + " ");
-      switch (i)
-             
+      switch (i) {
+        case 0:
+          figura1 = figura;
+          break;
+        case 1:
+          figura2 = figura;
+          break;
+        case 2:
+          figura3 = figura;
+          break;
+        default:
+      }
+    }
+    System.out.println();
+    if (figura1.equals(figura2) && figura1.equals(figura3)){
+      System.out.println("Enhorabuena, ha ganado 10 monedas.");
+    } else if (figura1.equals(figura2) || figura1.equals(figura3) || figura2.equals(figura3)){
+      System.out.println("Bien, ha recuperado su moneda.");
+    } else {
+      System.out.println("Lo siento, ha perdido.");
     }
   }
 }
