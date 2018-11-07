@@ -17,14 +17,14 @@ public class Ejercicio02 {
     System.out.println();
 
     //Crear el array y mostrar los datos del mismo
-    String[] simbolo = new String[10];
-    simbolo[0] = "a";
-    simbolo[1] = "x";
-    simbolo[4] = "@";
-    simbolo[6] = " ";
-    simbolo[7] = "+";
-    simbolo[8] = "Q";
-    for (String elemento : simbolo) {
+    char[] simbolo = new char[10];
+    simbolo[0] = 'a';
+    simbolo[1] = 'x';
+    simbolo[4] = '@';
+    simbolo[6] = ' ';
+    simbolo[7] = '+';
+    simbolo[8] = 'Q';
+    for (char elemento : simbolo) {
       System.out.print(elemento + " ");
     }
     System.out.println();
