@@ -28,5 +28,8 @@ public class Ejercicio01 {
       System.out.print(elemento + " ");
     }
     System.out.println();
+    /*
+    Los elementos que no son inicializados tienen valor '0'
+    */
   }
 }
