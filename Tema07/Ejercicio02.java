@@ -13,7 +13,7 @@ package tema07;
 public class Ejercicio02 {
 
   public static void main(String[] args) {
-    System.out.println("Array de 12 números con valores vacíos");
+    System.out.println("Array de 10 símbolos con valores vacíos");
     System.out.println();
 
     //Crear el array y mostrar los datos del mismo
