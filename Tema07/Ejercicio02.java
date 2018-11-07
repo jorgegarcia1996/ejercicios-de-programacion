@@ -29,7 +29,7 @@ public class Ejercicio02 {
     }
     System.out.println();
     /*
-    Los elementos que no son inicializados tienen valor '0'
+    Los elementos que no son inicializados tienen valor 'null'
     */
   }
 }
