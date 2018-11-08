@@ -14,11 +14,36 @@ public class Ejercicio05 {
 
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
-    System.out.println("Detectar máximo y mínimo de un array con datos"
+    System.out.println("Detectar máximo y mínimo de un array con numeros"
             + " introducidos por teclado");
     System.out.println();
 
-    //Crear el array con los datos del usuario
-    
+    //Crear el array con los numeros del usuario
+    int[] numeros = new int[10];
+    for (int i = 0; i < 10; i++) {
+      System.out.print("Introduzca un número entero y pulse 'intro': ");
+      int numero = Integer.parseInt(s.nextLine());
+      numeros[i] = numero;
+    }
+    //Detectar el máximo y el mínimo
+    int maximo = Integer.MIN_VALUE;
+    int minimo = Integer.MAX_VALUE;
+    for (int elemento : numeros) {
+      if (elemento < minimo) {
+        minimo = elemento;
+      } else if (elemento > maximo) {
+        maximo = elemento;
+      }
+    }
+    //Mostrar el resultado
+    for (int elemento : numeros) {
+      if (elemento == minimo) {
+        System.out.println(elemento + " --> MÍNIMO");
+      } else if (elemento == maximo) {
+        System.out.println(elemento + " --> MÁXIMO");
+      } else {
+        System.out.println(elemento);
+      }
+    }
   }
 }
