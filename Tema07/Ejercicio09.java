@@ -21,7 +21,7 @@ public class Ejercicio09 {
     final int N = 8;
     int[] numeros = new int[N];
     for (int i = 0; i < N; i++) {
-      System.out.print("Introduzca un número entero i pulse 'INTRO': ");
+      System.out.print("Introduzca un número entero y pulse 'INTRO': ");
       int numero = Integer.parseInt(s.nextLine());
       numeros[i] = numero;
     }
