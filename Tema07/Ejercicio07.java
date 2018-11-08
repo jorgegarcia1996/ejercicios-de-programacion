@@ -17,8 +17,7 @@ public class Ejercicio07 {
 
   public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
-    System.out.println("Pasar el último elemento de un array al primero y "
-            + "mover el resto hacia la derecha");
+    System.out.println("Modificar valores del array");
     System.out.println();
 
     //Crear el array con los numeros aleatorios
@@ -35,12 +34,15 @@ public class Ejercicio07 {
     System.out.print("Introduzca el nuevo número: ");
     int nuevo = Integer.parseInt(s.nextLine());
     //Mostrar los valores cambiados
+    int i = 0;
     for (int elemento : numeros) {
       if (elemento == cambiar) {
         System.out.print("'" + nuevo + "' ");
+        numeros[i] = nuevo;
       } else {
         System.out.print(elemento + " ");
       }
+      i++;
     }
     System.out.println();
   }
