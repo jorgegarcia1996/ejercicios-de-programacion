@@ -38,7 +38,7 @@ public class Ejercicio08 {
       for (int j = 0; j <= temperaturas[i]; j++){
         barra = barra + "█";
       }
-      System.out.printf("%-12s|%-70s\n", meses[i], barra);
+      System.out.printf("%-12s %3d|%-70s\n", meses[i],temperaturas[i], barra);
     }
   }
 }
