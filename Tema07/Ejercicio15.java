@@ -31,10 +31,14 @@ public class Ejercicio15 {
     //Crear el array con la coupación inicial de las mesas
     final int N = 10;
     int[] ocupacionMesas = new int[N];
+    int[] sitioMesas = new int[N];
     int grupo;
-    boolean vacia = false, llena = false;
+    boolean vacia, hueco, salir;
     for (int i = 0; i < N; i++) {
       ocupacionMesas[i] = (int)(Math.random() * 5);
+    }
+    for (int i = 0; i < N; i++) {
+      sitioMesas[i] = 4 - ocupacionMesas[i];
     }
     //Mostrar la ocupación inicial de las mesas
     System.out.printf("%-10s |", "Mesa nº");
@@ -50,19 +54,36 @@ public class Ejercicio15 {
     System.out.println();
     //Pedir el número de personas del grupo y comprobar si tienen hueco o no para sentarse
     do {
+      vacia = false;
+      hueco = false;
+      salir = false;
       System.out.print("¿Cuántos son? (Introduzca '-1' para salir): ");
       grupo = Integer.parseInt(s.nextLine());
-      if (grupo != -1) {
-        while (grupo < 0 || grupo > 4) {
-          System.out.println("Lo siento, no admitimos grupos de 6, haga grupos de"
-                  + " 4 personas como máximo e intente de nuevo.");
-          System.out.print("¿Cuántos son? (Introduzca '-1' para salir): ");
-          grupo = Integer.parseInt(s.nextLine());
+      //Comprobar el grupo
+      while ((grupo <= 0 || grupo > 4) && !salir) {
+        if (grupo != -1) {
+          if (grupo < 0) {
+            System.out.println("El número mínimo de personas por grupo es de 1.");
+            System.out.print("¿Cuántos son? (Introduzca '-1' para salir): ");
+            grupo = Integer.parseInt(s.nextLine());
+            System.out.println();
+          } else {
+            System.out.println("Lo siento, no admitimos grupos de " + grupo 
+                + ", haga grupos de 4 personas como máximo e intente de nuevo.");
+            System.out.print("¿Cuántos son? (Introduzca '-1' para salir): ");
+            grupo = Integer.parseInt(s.nextLine());
+            System.out.println();
+          }
+        } else {
+          salir = true;
         }
-
+      }
+      
+      if (grupo != -1) {
         //Comprobar si hay mesas vacías
         for (int i = 0; i < N; i++) {
           if (ocupacionMesas[i] == 0) {
+            hueco = true;
             System.out.println("Por favor, siéntese en la mesa " + (i + 1));
             System.out.println();
             ocupacionMesas[i] += grupo;
@@ -74,18 +95,23 @@ public class Ejercicio15 {
         //Comprobar si en alguna mesa hay hueco para mesa compartida
         if (!vacia) {
           for (int i = 0; i < N; i++) {
-            if ((ocupacionMesas[i] - grupo) >= 0 && ocupacionMesas[i] < 4) {
+            if (ocupacionMesas[i] < 4 && sitioMesas[i] >= grupo) {
+              hueco = true;
               System.out.println("Tendrán que compartir mesa. Por favor, "
                       + "siéntese en la mesa " + (i + 1));
               System.out.println();
               ocupacionMesas[i] += grupo;
+              sitioMesas[i] -= grupo;
               i = 20;
-            } else if (ocupacionMesas[N] == 4) {
-              System.out.println("Lo siento, en estos momentos no queda sitio.");
-              System.out.println();
             }
           }
         }
+        //Mensaje cuando no hay sitio para sentarse
+        if (!hueco) {
+          System.out.println("No hay sitio disponible en este momento, vuelva más tarde.");
+          System.out.println();
+        }
+        
         //Mostrar la ocupación de las mesas actualizada
         System.out.printf("%-10s |", "Mesa nº");
         for (int i = 1; i <= N; i++) {
@@ -98,7 +124,6 @@ public class Ejercicio15 {
         }
         System.out.println();
         System.out.println();
-        vacia = false;
       } else {
         System.out.println("Gracias por venir.");
       }
