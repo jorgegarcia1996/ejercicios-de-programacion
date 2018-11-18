@@ -22,27 +22,44 @@ public class Ejercicio02 {
     final int F = 4;
     final int C = 5;
     int[][] num = new int[F][C];
-    for (int i = 0; i < F; i++) {
-      System.out.println("Datos de la fila " + i);
-      for (int j = 0; j < C; j++) {
-        System.out.print("Introduzca un número entero: ");
-        num[i][j] = Integer.parseInt(s.nextLine());
+    int fila = 0, columna = 0;
+    System.out.println("Por favor, introduzca los números (enteros) en el array");
+    for(fila = 0; fila < F; fila++) {
+      for(columna = 0; columna < 5; columna++) {
+        System.out.print("Fila " + fila + ", columna " + columna + ": ");
+        num[fila][columna] = Integer.parseInt(s.nextLine());
       }
-      System.out.println();
-    }
-    //Mostrar los datos del array
-    System.out.print("Índice: ");
-    for (int j = 0; j < C; j++) {
-      System.out.printf("%4d |", j);
     }
     System.out.println();
-    System.out.println("--------------------------------------------");
-    for (int i = 0; i < F; i++) {
-      System.out.print("Fila " + i + ": ");
-      for (int j = 0; j < C; j++) {
-        System.out.printf("%4d |", num[i][j]);
+
+    // Muestra los datos y las sumas parciales de las filas
+    int sumaFila = 0;
+    for(fila = 0; fila < 4; fila++) {
+      sumaFila = 0;
+      for(columna = 0; columna < C; columna++) {
+        System.out.printf("%7d   ", num[fila][columna]);
+        sumaFila += num[fila][columna];
       }
-      System.out.println();
+      System.out.printf("|%7d\n", sumaFila);
     }
+    
+    // Muestra las sumas parciales de las columnas
+    for(columna = 0; columna < C; columna++) {
+      System.out.print("----------");
+    }
+    System.out.println("-----------");
+
+    int sumaColumna = 0;
+    int sumaTotal = 0;
+    for(columna = 0; columna < C; columna++) {
+      sumaColumna = 0;
+      for(fila = 0; fila < F; fila++) {
+        sumaColumna += num[fila][columna];
+      }
+
+      sumaTotal += sumaColumna;
+      System.out.printf("%7d   ", sumaColumna);
+    }
+    System.out.printf("|%7d   ", sumaTotal);
   }
 }
