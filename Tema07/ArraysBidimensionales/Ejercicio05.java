@@ -28,14 +28,14 @@ public class Ejercicio05 {
     int[] posMax = new int[2];
     int[] posMin = new int[2];
     for(fila = 0; fila < F; fila++) {
-      for(columna = 0; columna < 5; columna++) {
+      for(columna = 0; columna < C; columna++) {
         num[fila][columna] = (int)(Math.random() * 1001);
       }
     }
     System.out.println();
 
     // Muestra los datos y calcula la posición del máximo y el mínimo
-    for(fila = 0; fila < 4; fila++) {
+    for(fila = 0; fila < F; fila++) {
       for(columna = 0; columna < C; columna++) {
         System.out.printf("%7d   |", num[fila][columna]);
         if (num[fila][columna] < minimo) {
