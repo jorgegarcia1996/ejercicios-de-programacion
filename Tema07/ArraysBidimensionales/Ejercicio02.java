@@ -4,10 +4,10 @@ import java.util.Scanner;
 /**
  * Ejercicio 02 del Tema 07 (Arrays bidimensionales)
  *
- * Define un array de 12 números enteros con nombre num y asigna los valores
- * según la tabla que se muestra a continuación. Muestra el contenido de todos
- * los elementos del array. ¿Qué sucede con los valores de los elementos que no
- * han sido inicializados?
+ * Escribe un programa que pida 20 números enteros. Estos números se deben
+ * introducir en un array de 4 filas por 5 columnas. El programa mostrará las
+ * sumas parciales de filas y columnas igual que si de una hoja de cálculo se
+ * tratara. La suma total debe aparecer en la esquina inferior derecha.
  *
  * @author Jorge García Molina
  */
