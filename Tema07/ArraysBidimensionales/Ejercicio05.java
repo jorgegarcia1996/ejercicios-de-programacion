@@ -19,8 +19,8 @@ public class Ejercicio05 {
     System.out.println();
 
     //Crear el array
-    final int F = 4;
-    final int C = 5;
+    final int F = 6;
+    final int C = 10;
     int[][] num = new int[F][C];
     int fila = 0, columna = 0;
     int maximo = Integer.MIN_VALUE;
@@ -50,6 +50,7 @@ public class Ejercicio05 {
       }
       System.out.println();
     }
+    //Muestra la posición del máximo y el mínimo
       System.out.println();
       System.out.println("El máximo está en la columna " + (posMax[1] + 1)
               + " y fila " + (posMax[0] + 1));
