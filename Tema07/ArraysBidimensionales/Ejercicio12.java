@@ -14,7 +14,7 @@ package tema07.ArraysBidimensionales;
 public class Ejercicio12 {
 
   public static void main(String[] args) throws InterruptedException {
-    System.out.println("Array bidimensional (10 * 10), diagonal '\\' y calculos de la diagonal");
+    System.out.println("Array bidimensional (9 * 9), diagonal '/' y calculos de la diagonal");
     System.out.println();
 
     //Crear el array
