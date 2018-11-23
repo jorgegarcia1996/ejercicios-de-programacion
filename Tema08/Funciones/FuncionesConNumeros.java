@@ -8,9 +8,9 @@ package Funciones;
  * Observa bien lo que hace cada función ya que, si las implementas en el orden
  * adecuado, te puedes ahorrar mucho trabajo.
  * 
- * @author jorge
+ * @author Jorge Garcia Molina
  */
-public class FuncionesMetematicas {
+public class FuncionesConNumeros {
   
   /**
    * Funcion que invierte un número
@@ -50,11 +50,7 @@ public class FuncionesMetematicas {
    */
   public static boolean esCapicua(long n) {
     long invertido = voltea(n);
-    if (n == invertido) {
-      return true;
-    } else {
-      return false;
-    }
+    return n == invertido;
   }
   
   /**
@@ -135,6 +131,91 @@ public class FuncionesMetematicas {
     return pos;
   }
   
+  /**
+   * Funcion que quita a un número 'd' dígitos por la derecha
+   * 
+   * @param n es un número entero long
+   * @param d es el número de dígitos que se le van a quitar al número n
+   * @return devuelve un número con 'd' dígitos menos por la derecha
+   */
+  public static long quitaPorDetras(long n, long d) {
+    for (int i = 0; i < d; i++) {
+      n /= 10;
+    }
+    return n;
+  }
   
-  public static long quitaPorDetras(long num, long n)
+  /**
+   * Funcion que quita a un número 'd' dígitos por la izquierda
+   * 
+   * @param n es un número entero long
+   * @param d es el número de dígitosque se le van a quitar al número n
+   * @return devuelve un número con 'd' dígitos menos por la izquierda
+   */
+  public static long quitaPorDelante(long n, long d) {
+    long invertido = voltea(n);
+    for (int i = 0; i < d; i++) {
+      invertido /= 10;
+    }
+    n = voltea(invertido);
+    return n;
+  }
+  
+  /**
+   * Función para juntar 2 números formando uno nuevo
+   * 
+   * @param n1 es un número entero long
+   * @param n2 es un número entero long
+   * @return devuelve un número entero el cual es los dos numeros anteriores juntos
+   */
+  public static long juntaNumeros(long n1, long n2) {
+    long invertido = voltea(n2);
+    while (invertido > 0) {
+      n1 = (n1 * 10) + (invertido % 10);
+      invertido /= 10;
+    }
+    return n1;
+  }
+  
+  /**
+   * Funcion para agregar un dígito a un número 'n' por la derecha
+   * 
+   * @param n es un número entero long
+   * @param d es un número entero de un dígito
+   * @return devuelve el número 'n' mas el dígito 'd' por la derecha
+   */
+  public static long pegaPorDetras(long n, long d) {
+    return juntaNumeros(n, d);
+  }
+  
+  /**
+   * Funcion para agregar un dígito a un número 'n' por la izquierda
+   * 
+   * @param n es un número entero long
+   * @param d es un número entero de un dígito
+   * @return devuelve el número 'n' mas el dígito 'd' por la izquierda
+   */
+  public static long pegaPorDelante(long n, long d) {
+    return juntaNumeros(d, n);
+  }
+  
+  /**
+   * Función para seleccionar un trozo de un número dando la posición inicial y final
+   * 
+   * @param n es un número entero long
+   * @param pos1 es la posición de inicial
+   * @param pos2 es la posición final
+   * @return el fragmento seleccionado del número
+   */
+  public static long juntaNumeros(long n, long pos1, long pos2) {
+    for (int i = 0; i < pos2; i++) {
+      n /= 10;
+    }
+    long invertido = voltea(n);
+    for (int i = 0; i < pos1; i++) {
+      invertido /= 10;
+    }
+    n = voltea(invertido);
+    return n;
+  }
 }
