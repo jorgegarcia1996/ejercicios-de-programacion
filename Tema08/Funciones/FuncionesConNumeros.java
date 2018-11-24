@@ -74,10 +74,7 @@ public class FuncionesConNumeros {
    * @return devuelve un número entero long como resultado de calcular la potencia
    */
   public static long potencia(long b, long e) {
-    long potencia = b;
-    for (long i = e; i > 0; i--) {
-      potencia *= b;
-    }
+    long potencia = (long)(Math.pow((double)b, (double)e));
     return potencia;
   }
   
@@ -117,18 +114,26 @@ public class FuncionesConNumeros {
    * 
    * @param n es un número entero
    * @param d es un número entero el cual es el digito que buscamos en el número n
-   * @return la posición del dígito d dentro del número n
+   * @return la posición del dígito d dentro del número n, si no lo encuentra devuelve '-1'
    */
-  public static long posicionDeNumero(long n, long d) {
+  public static long posicionDeDigito(long n, long d) {
     long invertido = voltea(n);
     long pos = 0;
-    long digito = invertido % 10;
-    while (digito != d) {
+    long digito;
+    boolean encontrado = false;
+    while (invertido > 0 && !encontrado) {
       invertido /= 10;
       digito = invertido % 10;
       pos++;
+      if (digito == d) {
+        encontrado = true;
+      }
     }
-    return pos;
+    if (encontrado) {
+      return pos;
+    } else {
+      return -1;
+    }
   }
   
   /**
@@ -157,8 +162,7 @@ public class FuncionesConNumeros {
     for (int i = 0; i < d; i++) {
       invertido /= 10;
     }
-    n = voltea(invertido);
-    return n;
+    return voltea(invertido);
   }
   
   /**
@@ -207,15 +211,10 @@ public class FuncionesConNumeros {
    * @param pos2 es la posición final
    * @return el fragmento seleccionado del número
    */
-  public static long juntaNumeros(long n, long pos1, long pos2) {
-    for (int i = 0; i < pos2; i++) {
-      n /= 10;
-    }
-    long invertido = voltea(n);
-    for (int i = 0; i < pos1; i++) {
-      invertido /= 10;
-    }
-    n = voltea(invertido);
+  public static long trozoDeNumero(long n, long pos1, long pos2) {
+    long longitud = digitos(n);
+    n = quitaPorDelante(n, pos1);
+    n = quitaPorDetras(n, longitud - pos2 - 1);
     return n;
   }
 }
