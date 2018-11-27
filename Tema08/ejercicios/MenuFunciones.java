@@ -1,7 +1,7 @@
-package Ejercicios;
+package ejercicios;
 
 
-import Funciones.FuncionesConNumeros;
+import funciones.FuncionesConNumeros;
 import java.util.Scanner;
 
 /**

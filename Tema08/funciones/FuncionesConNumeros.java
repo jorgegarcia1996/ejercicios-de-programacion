@@ -1,4 +1,4 @@
-package Funciones;
+package funciones;
 
 /**
  * Ejercicios 1-14 del tema 08.
