@@ -16,7 +16,7 @@ public class MenuFunciones {
     Scanner s = new Scanner(System.in);
     long num1, num2, num3;
     int opcion;
-    String s1, s2;
+    String s1, s2, s3;
     boolean salir = false;
     do {
       System.out.println();
@@ -218,58 +218,58 @@ public class MenuFunciones {
               System.out.println("Función 'convierteABinario'.");
               System.out.println("Funcion para pasar un número de octal (O), "
                       + "decimal (D) o hexadecimal (H) a binario");
-              System.out.println("Introduzca un número entero: ");
-              num1 = Long.parseLong(s.nextLine());
-              System.out.println("Introduzca la base del número introducido (O - D - H): ");
-              s1 = s.nextLine().toUpperCase();
-              System.out.println("El número " + num1 + " pasado a binario es: " + 
-                      FuncionesDeConversion.convierteABinario(num1, s1));
+              System.out.print("Introduzca un número entero: ");
+              s1 = s.nextLine();
+              System.out.print("Introduzca la base del número introducido (O - D - H): ");
+              s2 = s.nextLine().toUpperCase();
+              System.out.print("El número " + s1 + " pasado a binario es: " + 
+                      FuncionesDeConversion.convierteABinario(s1, s2));
               break;
             case 2:
               System.out.println("Función 'convierteAOctal'.");
               System.out.println("Funcion para pasar un número de binario (B), "
                       + "decimal (D) o hexadecimal (H) a octal");
-              System.out.println("Introduzca un número entero: ");
-              num1 = Long.parseLong(s.nextLine());
-              System.out.println("Introduzca la base del número introducido (B - D - H): ");
-              s1 = s.nextLine().toUpperCase();
-              System.out.println("El número " + num1 + " pasado a octal es: " + 
-                      FuncionesDeConversion.convierteAOctal(num1, s1));
+              System.out.print("Introduzca un número entero: ");
+              s1 = s.nextLine();
+              System.out.print("Introduzca la base del número introducido (B - D - H): ");
+              s2 = s.nextLine().toUpperCase();
+              System.out.println("El número " + s1 + " pasado a octal es: " + 
+                      FuncionesDeConversion.convierteAOctal(s1, s2));
               break;
             case 3:
               System.out.println("Función 'convierteADecimal'.");
               System.out.println("Funcion para pasar un número de binario (B), "
                       + "octal (O) o hexadecimal (H) a decimal");
-              System.out.println("Introduzca un número entero: ");
-              num1 = Long.parseLong(s.nextLine());
-              System.out.println("Introduzca la base del número introducido (B - O - H): ");
-              s1 = s.nextLine().toUpperCase();
-              System.out.println("El número " + num1 + " pasado a decimal es: " + 
-                      FuncionesDeConversion.convierteADecimal(num1, s1));
+              System.out.print("Introduzca un número entero: ");
+              s1 = s.nextLine();
+              System.out.print("Introduzca la base del número introducido (B - O - H): ");
+              s2 = s.nextLine().toUpperCase();
+              System.out.println("El número " + s1 + " pasado a decimal es: " + 
+                      FuncionesDeConversion.convierteADecimal(s1, s2));
               break;
             case 4:
               System.out.println("Función 'convierteAHexadecimal'.");
               System.out.println("Funcion para pasar un número de binario (B), "
                       + "octal (O) o decimal (D) a hexadecimal");
-              System.out.println("Introduzca un número entero: ");
-              num1 = Long.parseLong(s.nextLine());
-              System.out.println("Introduzca la base del número introducido (B - O - D): ");
-              s1 = s.nextLine().toUpperCase();
-              System.out.println("El número " + num1 + " pasado a hexadecimal es: " + 
-                      FuncionesDeConversion.convierteAHexadecimal(num1, s1));
+              System.out.print("Introduzca un número entero: ");
+              s1 = s.nextLine();
+              System.out.print("Introduzca la base del número introducido (B - O - D): ");
+              s2 = s.nextLine().toUpperCase();
+              System.out.println("El número " + s1 + " pasado a hexadecimal es: " + 
+                      FuncionesDeConversion.convierteAHexadecimal(s1, s2));
               break;
             case 5:
               System.out.println("Función 'convierte'.");
               System.out.println("Funcion para convertir un número binario (B), "
                       + "decimal (D), octal (O) o hexadecimal (H) a otro sistema de esos cuatro");
-              System.out.println("Introduzca un número entero: ");
-              num1 = Long.parseLong(s.nextLine());
-              System.out.println("Introduzca la base del número introducido (B - O - D - H): ");
-              s1 = s.nextLine().toUpperCase();
-              System.out.println("Introduzca la base a la que quieres convertir el número (B - O - D - H): ");
+              System.out.print("Introduzca un número entero: ");
+              s1 = s.nextLine();
+              System.out.print("Introduzca la base del número introducido (B - O - D - H): ");
               s2 = s.nextLine().toUpperCase();
-              System.out.println("El número " + num1 + " pasado a '" + s2 + "' es: " + 
-                      FuncionesDeConversion.convierte(num1, s1, s2));
+              System.out.print("Introduzca la base a la que quieres convertir el número (B - O - D - H): ");
+              s3 = s.nextLine().toUpperCase();
+              System.out.println("El número " + s1 + " pasado a '" + s3 + "' es: " + 
+                      FuncionesDeConversion.convierte(s1, s2, s3));
               break;
             case 6:
               salir = true;
