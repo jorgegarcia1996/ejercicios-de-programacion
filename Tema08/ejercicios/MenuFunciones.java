@@ -5,6 +5,7 @@ import funciones.FuncionesConNumeros;
 import funciones.FuncionesDeConversion;
 import funciones.FuncionesDeArraysSimples;
 import funciones.FuncionesDeArraysBidimensionales;
+import funciones.FuncionesVarias;
 import java.util.Scanner;
 
 /**
@@ -29,9 +30,10 @@ public class MenuFunciones {
       System.out.println("02.- Funciones de conversion.");
       System.out.println("03.- Funciones de arrays simples.");
       System.out.println("04.- Funciones de arrays bidimensionales.");
-      System.out.println("05.- SALIR.");
+      System.out.println("05.- Funciones varias (ejercicios 35 - 40).");
+      System.out.println("06.- SALIR.");
       System.out.println();
-      System.out.print("Elige una opción (1 - 5): ");
+      System.out.print("Elige una opción (1 - 6): ");
       int bloque = Integer.parseInt(s.nextLine());
       System.out.println();
 
@@ -638,6 +640,107 @@ public class MenuFunciones {
           }
           break;
         case 5:
+          System.out.println("Selecciona la funcion que quiere probar "
+                  + "de la lista de abajo.");
+          System.out.println("01.- Función 'convierteEnPalotes'.");
+          System.out.println("02.- Función 'filtraPrimos'.");
+          System.out.println("03.- Función 'convierteEnMorse'.");
+          System.out.println("04.- Función 'filtraCapicuas'.");
+          System.out.println("05.- Función 'convierteEnPalabras'.");
+          System.out.println("06.- Función 'filtraCon7'.");
+          System.out.println("07.- SALIR.");
+          System.out.println();
+          System.out.print("Elige una opción (1 - 7): ");
+          opcion = Integer.parseInt(s.nextLine());
+          System.out.println();
+          switch (opcion) {
+            case 1:
+              System.out.println("Función 'convierteEnPalotes'");
+              System.out.println("Función para convertir un número en palotes");
+              System.out.print("Introduce un número entero: ");
+              n1 = Integer.parseInt(s.nextLine());
+              System.out.println("El número " + n1 + " en palotes es: " + FuncionesVarias.convierteEnPalotes(n1));
+              break;
+            case 2:
+              System.out.println("Función 'filtraPrimos'");
+              System.out.println("Función para sacar los números primos de un array");
+              System.out.println("La función se probará con un array de 10 números"
+                      + " entre 0 y 100 generados aleatoriamente.");
+              Thread.sleep(1000);
+              a = FuncionesDeArraysSimples.generaArrayInt(10, 0, 100);
+              System.out.print("El array generado es: ");
+              for (int n : a) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              Thread.sleep(1000);
+              System.out.println("Los primos del array son: ");
+              for (int n : FuncionesVarias.filtraPrimos(a)) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              Thread.sleep(1000);
+              break;
+            case 3:
+              System.out.println("Función 'convierteEnMorse'");
+              System.out.println("Función para convertir un número en morse");
+              System.out.print("Introduce un número entero: ");
+              n1 = Integer.parseInt(s.nextLine());
+              System.out.println("El número " + n1 + " en morse es: " + FuncionesVarias.convierteEnMorse(n1));
+              break;
+            case 4:
+              System.out.println("Función 'filtraCapicuas'");
+              System.out.println("Función para sacar los números capicua de un array");
+              System.out.println("La función se probará con un array de 10 números"
+                      + " entre 0 y 100 generados aleatoriamente.");
+              Thread.sleep(1000);
+              a = FuncionesDeArraysSimples.generaArrayInt(10, 0, 100);
+              System.out.print("El array generado es: ");
+              for (int n : a) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              Thread.sleep(1000);
+              System.out.println("Los capicua del array son: ");
+              for (int n : FuncionesVarias.filtraCapicuas(a)) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              break;
+            case 5:
+              System.out.println("Función 'convierteEnPalabras'");
+              System.out.println("Función para convertir un número en palabras");
+              System.out.print("Introduce un número entero: ");
+              n1 = Integer.parseInt(s.nextLine());
+              System.out.println("El número " + n1 + " en morse es: " + FuncionesVarias.convierteEnPalabras(n1));
+              break;
+            case 6:
+              System.out.println("Función 'filtraCon7'");
+              System.out.println("Función para buscar números con el dígito 7 en un array");
+              System.out.println("La función se probará con un array de 10 números"
+                      + " entre 0 y 100 generados aleatoriamente.");
+              Thread.sleep(1000);
+              a = FuncionesDeArraysSimples.generaArrayInt(10, 0, 100);
+              System.out.print("El array generado es: ");
+              for (int n : a) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              Thread.sleep(1000);
+              System.out.println("Los números con el dígito '7' del array son: ");
+              for (int n : FuncionesVarias.filtraCon7(a)) {
+                System.out.print(n + " ");
+              }
+              System.out.println();
+              break;
+            case 7:
+              salir = true;
+              break;
+            default:
+              System.out.println("La opción seleccionada no es válida.");
+          }
+          break;
+        case 6:
           salir = true;
           break;
         default:
