@@ -4,7 +4,7 @@
 
 ### 1.- ¿Cuáles serían los atributos de la clase 'PilotoDeFormula1'? ¿Se te ocurren algunas instancias de esta clase?
 <p>
-Atributos: nombre, apellidos, campeonatosGanados, ...
+Atributos: nombre, apellidos, campeonatosGanados, patrocinadores, escuderia...
 </p>
 <p>
 Instancias: (Nombre de cualquier piloto de formula 1)
@@ -15,8 +15,10 @@ Instancias: (Nombre de cualquier piloto de formula 1)
 Persona: paula, javier
 </p>
 <p>
-Animal: goofy, gardfield, perro, caballo, tom, silvestre, rocinante, milú, snoopy, gato, pluto
-bucefalo, pegaso, ayudante_de_santa_claus, laika, pato_lucas
+Animal: patoLucas
+   - perro: goofy, milú, snoopy, pluto, ayudanteDeSantaClaus, laika
+   - gato: gardfield, tom, silvestre, 
+   - caballo: rocinante, bucefalo
 </p>
 <p>
 Mineral: pirita, cuarzo
@@ -24,15 +26,15 @@ Mineral: pirita, cuarzo
 
 ### 3.- ¿Cuáles serían los atributos de la clase 'Vivienda'? ¿Qué subclases se te ocurren?
 <p>
-Atributos: superficie, numeroDePlantas, numeroDeHabitaciones,...
+Atributos: superficie, numeroDePlantas, numeroDeHabitaciones, colorExterior...
 </p>
 <p>
-Subclases: Cocina, CuartoDeBaño, Salón, Dormitorios,...
+Subclases: Cocina, CuartoDeBaño, Salón, Dormitorio,...
 </p>
 
 ### 4.- Piensa en la liga de baloncesto, ¿qué 5 clases se te ocurren para representar 5 elementos distintos que intervengan en la liga?
 <p>
-Clases: Estadio, Equipo, Patrocinador, 
+Clases: Estadio, Equipo, Patrocinador, Entrenador, Partido
 </p>
 
 ### 5.- Haz una lista con los atributos que podría tener la clase caballo. A continuación haz una lista con los posibles métodos (acciones asociadas a los caballos).
@@ -40,10 +42,13 @@ Clases: Estadio, Equipo, Patrocinador,
 Atributos: colorDePelo, tipoDePelo, peso, estatura, raza, género
 </p>
 <p>
-Métodos: correr, galopar, mantenimiento, saltar, entrenar
+Métodos: correr, galopar, saltar, relinchar, ...
 </p>
 
 ### 6.- Lista los atributos de la clase Alumno ¿Sería nombre uno de los atributos de la clase? Razona tu respuesta
+<p>
+  Atributos: nombre, curso, fechaDeNacimiento, DNI, ...
+</p>
 <p>
 Sí porque el atributo 'nombre' forma parte de las características de un alumno concreto.
 </p>
