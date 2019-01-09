@@ -8,40 +8,19 @@ package Ejercicios.Ejercicio02;
 public class Bicicleta extends Vehiculo {
   
   //Atributos
-  private long kilometrosBici = 0;
-  private String tipo, color;
+  private String tipo; //Tipo de bicicleta
   
-  //Constructores
-  public Bicicleta(String tipo, String color) {
+  //Constructor
+  public Bicicleta(String tipo) {
     this.tipo = tipo;
-    this.color = color;
-    setVehiculosCreados(1);
   }
-  
-  public Bicicleta() {
-    this.tipo = "Carretera";
-    this.color = "Negro";
-    setVehiculosCreados(1);
-  }
-  
   
   //Getters
-  public long getKilometrosBici() {
-    return kilometrosBici;
-  }
-  
-  //Setters
-  public void setKilometrosBici(long kilometrosBici) {
-    this.kilometrosBici += kilometrosBici;
-    setKilometrosTotales(kilometrosBici);
+  public String getTipo() {
+    return tipo;
   }
   
   //Métodos
-  public void andaBici() {
-    System.out.println("Has andado 10 km con la bici.");
-    setKilometrosBici(10);
-  }
-  
   public void caballitoBici() {
     if ((Math.random() * 2) < 1) {
       System.out.println("Has hecho un caballito a la perfección.");

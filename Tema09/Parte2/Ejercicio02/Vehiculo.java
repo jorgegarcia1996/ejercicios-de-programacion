@@ -11,24 +11,29 @@ package Ejercicios.Ejercicio02;
  *
  * @author Jorge García Molina
  */
-public class Vehiculo {
+public abstract class Vehiculo {
   
-  //Atributos
-  private int vehiculosCreados = 0;
-  private long kilometrosTotales = 0;
+  //Atributos de clase
+  private static int vehiculosCreados = 0;
+  private static int kilometrosTotales = 0;
+  
+  //Atributos de instancia
+  private int kilometrosRecorridos;
   
   
   //Getters
-  public long getKilometrosTotales() {
-    return this.kilometrosTotales;
-  }
-  
-  //Setters
-  public void setKilometrosTotales(long kilometrosTotales) {
-    this.kilometrosTotales += kilometrosTotales;
+  public static int getKilometrosTotales() {
+    return kilometrosTotales;
   }
 
-  public void setVehiculosCreados(int vehiculosCreados) {
-    this.vehiculosCreados += vehiculosCreados;
+  public int getKilometrosRecorridos() {
+    return kilometrosRecorridos;
   }
+  
+  //Métodos
+  public void recorre(int k) {
+    this.kilometrosRecorridos += k;
+    Vehiculo.kilometrosTotales += k;
+  }
+  
 }

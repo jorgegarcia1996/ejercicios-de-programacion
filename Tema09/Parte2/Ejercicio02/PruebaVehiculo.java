@@ -10,9 +10,10 @@ public class PruebaVehiculo {
   public static void main(String[] args) {
     boolean salir = false;
     int opcion = 0;
+    int distancia = 0;
     Scanner s = new Scanner(System.in);
-    Bicicleta Bici = new Bicicleta();
-    Coche Furgoneta = new Coche();
+    Bicicleta Bici = new Bicicleta("Carretera");
+    Coche Furgoneta = new Coche("Renault");
     do{
       //Menú
       System.out.println("==========Vehículos==========");
@@ -33,7 +34,9 @@ public class PruebaVehiculo {
       //Opciones
       switch (opcion) {
         case 1:
-          Bici.andaBici();
+          System.out.print("¿Cuantos Kms vas a pasear? ");
+          distancia = Integer.parseInt(s.nextLine());
+          Bici.recorre(distancia);
           System.out.println();
           break;
         case 2:
@@ -41,7 +44,9 @@ public class PruebaVehiculo {
           System.out.println();
           break;
         case 3:
-          Furgoneta.andaCoche();
+          System.out.print("¿Cuantos Kms vas a pasear? ");
+          distancia = Integer.parseInt(s.nextLine());
+          Furgoneta.recorre(distancia);
           System.out.println();
           break;
         case 4:
@@ -50,17 +55,17 @@ public class PruebaVehiculo {
           break;
         case 5:
           System.out.println("Con la bicicleta has recorrido " +
-                  Bici.getKilometrosBici() + " Kms");
+                  Bici.getKilometrosRecorridos()+ " Kms");
           System.out.println();
           break;
         case 6:
           System.out.println("Con el coche has recorrido " + 
-                  Furgoneta.getKilometrosCoche() + " Kms");
+                  Furgoneta.getKilometrosRecorridos()+ " Kms");
           System.out.println();
           break;
         case 7:
           System.out.println("En total has recorrido " + 
-                   + " Kms");
+                   Vehiculo.getKilometrosTotales() + " Kms");
           System.out.println();
           break;
         case 8:
