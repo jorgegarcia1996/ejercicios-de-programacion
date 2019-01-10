@@ -1,14 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Ejercicios.Ejercicio03;
 
 /**
+ * Subclase de Animal
  *
  * @author JorgeGarciaMolina
  */
-public class Lagarto {
+public class Lagarto extends Animal {
   
+  //Atributos
+  private String raza;
+  
+  
+  //Constructor
+  public Lagarto(String raza) {
+    this.raza = raza;
+  }
+  
+  
+  //Métodos
+  void tomaSol() {
+    System.out.println("El lagarto toma el sol");
+  }
+  
+  void mudaPiel() {
+    System.out.println("El lagarto muda la piel");
+  }
+  
+  void trepaArbol() {
+    System.out.println("El lagarto trepa a un árbol");
+  }
 }

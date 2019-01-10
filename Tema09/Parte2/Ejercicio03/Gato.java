@@ -1,14 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Ejercicios.Ejercicio03;
 
 /**
+ * Subclase de 'Mamifero'
  *
  * @author JorgeGarciaMolina
  */
-public class Gato {
+public class Gato extends Mamifero {
   
+  //Atributos
+  private String raza;
+  
+  //Constructores
+  public Gato(String raza) {
+    this.raza = raza;
+  }
+  
+  
+  //Métodos
+  void arana() {
+    System.out.println("El gato araña el sofá");
+  }
+  
+  void maulla() {
+    System.out.println("Miiiaaaaaaauuuuuuuuuu");
+  }
+  
+  void ronronea() {
+    System.out.println("El gato ronronea feliz");
+  }
 }
