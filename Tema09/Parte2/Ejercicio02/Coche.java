@@ -8,7 +8,7 @@ package Ejercicios.Ejercicio02;
 public class Coche extends Vehiculo {
   
   //Atributos
-  private String Marca; //Tipo de bicicleta
+  private String Marca; //Marca del coche
   
   //Constructor
   public Coche(String Marca) {
