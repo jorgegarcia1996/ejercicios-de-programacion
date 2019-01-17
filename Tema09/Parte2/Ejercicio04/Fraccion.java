@@ -15,7 +15,6 @@ public class Fraccion {
   private final int numerador, denominador;
   
   //Constructor
-
   public Fraccion(int numerador, int denominador) {
     this.numerador = numerador;
     this.denominador = denominador;
@@ -54,8 +53,8 @@ public class Fraccion {
     int n = this.numerador;
     int d = this.denominador;
       
-    for (int i = 2; i < Math.min(this.numerador, this.denominador); i++) {
-      while (((n % i) == 0) && ((d % i) == 0)) {
+    for (int i = 2; i < (n + d); i++) {
+      if (((n % i) == 0) && ((d % i) == 0)) {
         n /= i;
         d /= i;
       }
@@ -75,6 +74,15 @@ public class Fraccion {
   }
   
   /**
+   * Multiplica una fraccion con un número entero
+   * @param n numero entero
+   * @return una fraccion resultado de la multiplicacion
+   */
+  public Fraccion multiplica(int n) {
+    return new Fraccion (this.numerador * n, this.denominador);
+  }
+  
+  /**
    * Divide 2 fracciones
    * @param f una fraccion
    * @return la fraccion resultante de dividir las 2 fracciones dadas como
@@ -83,5 +91,14 @@ public class Fraccion {
   public Fraccion divide(Fraccion f) {
     return new Fraccion(this.numerador * f.getDenominador(), this.denominador 
             * f.getNumerador());
+  }
+  
+  /**
+   * Divide una fraccion con un número entero
+   * @param n numero entero
+   * @return una fraccion resultado de la división
+   */
+  public Fraccion divide(int n) {
+    return new Fraccion (this.numerador, this.denominador * n);
   }
 }
