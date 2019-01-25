@@ -27,14 +27,12 @@ public class Ejercicio04 {
     Scanner s = new Scanner(System.in);
     //Variables
     final int D = 50;
-    int opcion;
     String codigoIntroducido, autorIntroducido, tituloIntroducido;
     String generoIntroducido, duracionIntroducidaString;
-    int duracionIntroducida;
-    int primeraLibre;
-    int pos;
+    int duracionIntroducida, primeraLibre, pos, opcion;
+    int durMin, durMax;
     boolean salir = false;
-    boolean arrayLleno = false;
+    boolean existeCodigo = false;
     
     //Crear el array de discos
     Disco[] album = new Disco[D];
@@ -59,12 +57,65 @@ public class Ejercicio04 {
       //Acciones para la opcion seleccionada
       switch(opcion) {
         case 1:
-          System.out.println("\nLista de discos.");
-          System.out.println("------------------");
-          for (int i = 0; i < D; i++) {
-            if (!album[i].getCodigo().equals("LIBRE")) {
-              System.out.println(album[i]);
-            }
+          System.out.println("\n\nMenú de listado de discos.");
+          System.out.println("--------------------------------");
+          System.out.println("1. Lista de todos los discos.");
+          System.out.println("2. Lista por autor.");
+          System.out.println("3. Lista por género");
+          System.out.println("4. Lista por duración.");
+          System.out.println("5. Atrás.");
+          System.out.print("Seleccione una opción: ");
+          opcion = Integer.parseInt(s.nextLine());
+          switch (opcion) {
+            case 1:
+              System.out.println("\nLista completa de discos.");
+              System.out.println("---------------------------");
+              for (int i = 0; i < D; i++) {
+                if (!album[i].getCodigo().equals("LIBRE")) {
+                  System.out.println(album[i]);
+                }
+              }
+              break;
+            case 2:
+              System.out.print("\nIntroduce el nombre del autor: ");
+              autorIntroducido = s.nextLine();
+              System.out.println("\nLista de discos del autor " + autorIntroducido);
+              System.out.println("-------------------------------------------------");
+              for (int i = 0; i < D; i++) {
+                if (album[i].getAutor().equals(autorIntroducido)) {
+                  System.out.println(album[i]);
+                }
+              }
+              break;
+            case 3:
+              System.out.print("\nIntroduce el género: ");
+              generoIntroducido = s.nextLine();
+              System.out.println("\nLista de discos del género " + generoIntroducido);
+              System.out.println("-------------------------------------------------");
+              for (int i = 0; i < D; i++) {
+                if (album[i].getGenero().equals(generoIntroducido)) {
+                  System.out.println(album[i]);
+                }
+              }
+              break;
+            case 4:
+              System.out.print("\nIntroduce la duración mínima: .");
+              durMin = Integer.parseInt(s.nextLine());
+              System.out.print("Introduce la duración máxima: .");
+              durMax = Integer.parseInt(s.nextLine());
+              System.out.println("\nLista de discos de duraación entre " + durMin 
+                      + " y " + durMax + "min");
+              System.out.println("-------------------------------------------------");
+              for (int i = 0; i < D; i++) {
+                if ((durMax < album[i].getDuracion()) && (album[i].getDuracion() > durMin)) {
+                  System.out.println(album[i]);
+                }
+              }
+              break;
+            case 5:
+              break;
+            default:
+              System.out.println("Opción no válida.");
           }
           break;
           
@@ -79,8 +130,20 @@ public class Ejercicio04 {
             System.out.println("No hay espacio para agregar un nuevo disco.");
           } else {
             System.out.println("Introduzca los datos del nuevo disco.");
-            System.out.print("Código: ");
-            codigoIntroducido = s.nextLine();
+            do {
+              System.out.print("Código: ");
+              codigoIntroducido = s.nextLine();
+              for (int i = 0; i < D; i++) {
+                if (album[i].getCodigo().equals(codigoIntroducido)) {
+                  existeCodigo = true;
+                }
+              }
+              if (existeCodigo) {
+                System.out.println("El código introducido ya existe, introduce otro.");
+              } else {
+                existeCodigo = false;
+              }
+            } while(existeCodigo);
             album[primeraLibre].setCodigo(codigoIntroducido);
             System.out.print("Autor: ");
             autorIntroducido = s.nextLine();
@@ -108,11 +171,21 @@ public class Ejercicio04 {
           } while (!((album[pos].getCodigo()).equals(codigoIntroducido)));
           System.out.println("Introduzca los nuevos datos del disco.");
           System.out.println("Código: " + album[pos].getCodigo());
-          System.out.print("Nuevo código: ");
-          codigoIntroducido = s.nextLine();
-          if (!codigoIntroducido.equals("")) {
-            album[pos].setCodigo(codigoIntroducido);
-          }
+          do {
+              System.out.print("Nuevo código: ");
+              codigoIntroducido = s.nextLine();
+              for (int i = 0; i < D; i++) {
+                if (album[i].getCodigo().equals(codigoIntroducido)) {
+                  existeCodigo = true;
+                }
+              }
+              if (existeCodigo) {
+                System.out.println("El código introducido ya existe, introduce otro.");
+              } else {
+                existeCodigo = false;
+              }
+            } while(existeCodigo);
+          
           System.out.println("Autor: " + album[pos].getAutor());
           System.out.print("Nuevo autor: ");
           autorIntroducido = s.nextLine();
@@ -144,11 +217,22 @@ public class Ejercicio04 {
           System.out.print("Introduce el código del disco que quieres borrar: ");
           codigoIntroducido = s.nextLine();
           pos = -1;
-          do {
-            pos++;
-          } while (!((album[pos].getCodigo()).equals(codigoIntroducido)));
-          album[pos].setCodigo("LIBRE");
-          System.out.println("Disco borrado.");
+          for (int i = 0; i < D; i++) {
+            if (album[i].getCodigo().equals(codigoIntroducido)) {
+              existeCodigo = true;
+            }
+          }
+          
+          if (!existeCodigo) {
+            System.out.println("El código introducido no existe.");
+          } else {
+            do {
+              pos++;
+            } while (!((album[pos].getCodigo()).equals(codigoIntroducido)));
+            album[pos].setCodigo("LIBRE");
+            System.out.println("Disco borrado.");
+            existeCodigo = false;
+          }
           break;
         case 5:
           System.out.println("GRACIAS POR USAR NUESTROS SERVICIOS.");
