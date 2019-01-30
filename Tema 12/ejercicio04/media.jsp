@@ -19,7 +19,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="./main.css" type="text/css" rel="stylesheet">
-    <title>Ejercicio 03 del tema 12</title>
+    <title>Ejercicio 04 del tema 12</title>
   </head>
   <body>
     <h1>Tu nota es <%= nota.format(media)%></h1>
