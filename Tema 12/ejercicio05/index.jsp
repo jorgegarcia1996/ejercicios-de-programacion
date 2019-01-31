@@ -16,8 +16,7 @@
     <h1>Conversor Euros --> Pesetas</h1>
     <form action="convierte.jsp" method="post">
       <label>Euros:</label>
-      <input type="number" name="euros" min="0" max="10" step="0.01"><br>
-      <input type="text" name="tipo" value="eu-pts">
+      <input type="number" name="euros" step="0.01"><br>
       <input type="submit" value="Enviar">
     </form>
   </body>
