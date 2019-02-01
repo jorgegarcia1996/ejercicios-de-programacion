@@ -20,7 +20,6 @@
       <label>Selecciona el caracter de la pirámide: </label>
       <select name="caracter">
         <option value="f13d">&#xf13d;</option>
-        <option value="f07d">&#xf07d;</option>
         <option value="f0fc">&#xf0fc;</option>
         <option value="f1e2">&#xf1e2;</option>
         <option value="f085">&#xf085;</option>
